@@ -3,11 +3,10 @@ const path = require('path');
 
 const app = express();
 
-
-app.use(express.static(path.join(__dirname,'public')))
+app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/',(req, res) => {
-  res.state(200).send('Hello')
-});
+  res.status(200).send('Get req is working')
+})
 
-app.listen(3000, () => console.log('App is listening'))
+app.listen(3000,() => {console.log('Currently listening!')})
