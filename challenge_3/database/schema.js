@@ -1,8 +1,12 @@
 const Sequelize = require('sequelize');
-const db = require('./index.js');
+const connection = require('./index.js');
 
-const Users = Sequelize.define('user', {
+const Users = connection.define('user', {
   name: {
+    type: Sequelize.STRING,
+    allowNull: true
+  },
+  email: {
     type: Sequelize.STRING,
     allowNull: true
   },
@@ -52,7 +56,13 @@ const Users = Sequelize.define('user', {
 {timestamps: false}
 )
 
-Users.sync({force: false})
+Users.sync({force: true})
+.then(() => {
+  console.log('database is synced')
+})
+.catch((err) => {
+  console.log('there is err in sync',err)
+})
 
 module.export = Users;
 
