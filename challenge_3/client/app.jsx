@@ -44,9 +44,17 @@ class App extends React.Component {
 
   clickHandler2() {
 
-    if (this.state.page < 4) {
+    if (this.state.page === 0) {
       this.setState({ page: this.state.page + 1 });
     } else {
+
+      axios
+        .post('/', {
+          name: this.state.name
+        })
+        .then(console.log('hello from axios'))
+        .catch('Oh no axios failed')
+
       this.setState({
         page: 0,
         name: '',
@@ -99,7 +107,6 @@ class App extends React.Component {
         </div>
       )
 
-      //onClick={this.clickHandler}
     } else if (this.state.page === 2) {
       return (
         <div>
