@@ -14,10 +14,72 @@ import Square from './Square.jsx';
       col7: 7
        
      }
-    //  this.colToggler = this.colToggler.bind(this)
+     this.click = this.click.bind(this)
    }
 
-  //    colToggler() {
+   click(e) {
+     console.log('click', e.target)
+   }
+   
+
+   render() {
+
+    return (
+      <tbody onClick = {this.click}>
+          <tr>
+          <Square 
+            row = {this.props.row}
+            col = {this.state.col1} 
+            turn = {this.props.turn} 
+            findLowest = {this.props.findLowest}
+            exsistPiece = {this.props.exsistPiece} />
+          <Square 
+            row = {this.props.row}
+            col = {this.state.col2} 
+            turn = {this.props.turn} 
+            findLowest = {this.props.findLowest}
+            exsistPiece = {this.props.exsistPiece} />
+          <Square 
+            row = {this.props.row}
+            col = {this.state.col3} 
+            turn = {this.props.turn} 
+            findLowest = {this.props.findLowest}
+            exsistPiece = {this.props.exsistPiece} />
+          <Square 
+            row = {this.props.row}
+            col = {this.state.col4} 
+            turn = {this.props.turn} 
+            findLowest = {this.props.findLowest}
+            exsistPiece = {this.props.exsistPiece} />
+          <Square 
+            row = {this.props.row}
+            col = {this.state.col5} 
+            turn = {this.props.turn} 
+            findLowest = {this.props.findLowest}
+            exsistPiece = {this.props.exsistPiece} />
+          <Square 
+            row = {this.props.row}
+            col = {this.state.col6} 
+            turn = {this.props.turn} 
+            findLowest = {this.props.findLowest}
+            exsistPiece = {this.props.exsistPiece} />
+          <Square 
+            row = {this.props.row}
+            col = {this.state.col7} 
+            turn = {this.props.turn} 
+            findLowest = {this.props.findLowest}
+            exsistPiece = {this.props.exsistPiece} />
+        </tr>
+      </tbody>)
+   }
+  
+}
+
+export default Rows;
+
+
+//  this.colToggler = this.colToggler.bind(this)
+//    colToggler() {
   //   if (this.state.col7 === false) {
   //       this.setState({ col7: '1' }, () => { console.log('toggl', this.state)});
       
@@ -61,59 +123,3 @@ import Square from './Square.jsx';
   //   }
 
   // }
-   
-
-   render() {
-
-    return (
-      <tbody>
-          <tr>
-          <Square 
-            row = {this.props.row}
-            col = {this.state.col1} 
-            turnCounter = {this.props.turnCounter} 
-            turn = {this.props.turn} 
-            findLowest = {this.props.findLowest} />
-          <Square 
-            row = {this.props.row}
-            col = {this.state.col2} 
-            turnCounter = {this.props.turnCounter} 
-            turn = {this.props.turn} 
-            findLowest = {this.props.findLowest} />
-          <Square 
-            row = {this.props.row}
-            col = {this.state.col3} 
-            turnCounter = {this.props.turnCounter} 
-            turn = {this.props.turn} 
-            findLowest = {this.props.findLowest} />
-          <Square 
-            row = {this.props.row}
-            col = {this.state.col4} 
-            turnCounter = {this.props.turnCounter} 
-            turn = {this.props.turn} 
-            findLowest = {this.props.findLowest} />
-          <Square 
-            row = {this.props.row}
-            col = {this.state.col5} 
-            turnCounter = {this.props.turnCounter} 
-            turn = {this.props.turn} 
-            findLowest = {this.props.findLowest} />
-          <Square 
-            row = {this.props.row}
-            col = {this.state.col6} 
-            turnCounter = {this.props.turnCounter} 
-            turn = {this.props.turn} 
-            findLowest = {this.props.findLowest} />
-          <Square 
-            row = {this.props.row}
-            col = {this.state.col7} 
-            turnCounter = {this.props.turnCounter} 
-            turn = {this.props.turn} 
-            findLowest = {this.props.findLowest} />
-        </tr>
-      </tbody>)
-   }
-  
-}
-
-export default Rows;
