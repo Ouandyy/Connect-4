@@ -13,19 +13,33 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      turns: 0
+      turns: 0,
+      rowToggle: [1]
     }
     this.turnCounter = this.turnCounter.bind(this);
+    this.findLowest = this.findLowest.bind(this);
   }
 
   turnCounter() {
     this.setState({turns : this.state.turns + 1})
-    console.log(this.state.turns)
+  }
+
+  findLowest(arr) {
+    let pieceToggled = this.state.rowToggle;
+    if (pieceToggled.indexOf(arr) === -1) {
+      console.log('missing')
+      var lastPlaceHold = arr
+      for (let i = arr[0]; i < 8; i++) {
+        if (i === 7) {
+          // this.setState({rowToggle: this.state.rowToggle.push([6,arr[1]])})
+        }else {}
+      }
+    }
   }
 
   render() {
     return (
-      <div><Board turnCounter = {this.turnCounter} turn = {this.state.turns}/></div>
+      <div><Board turnCounter = {this.turnCounter} turn = {this.state.turns} findLowest = {this.findLowest}/></div>
     )
   }
 }

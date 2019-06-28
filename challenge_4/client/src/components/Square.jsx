@@ -4,24 +4,22 @@ class Square extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      piece: null
+      placement: [this.props.row, this.props.col],
+       
 
     }
     this.clicker = this.clicker.bind(this);
-    this.nullChanger = this.nullChanger.bind(this);
   }
 
   clicker(e) {
     this.props.turnCounter();
-    this.props.columnToggler();
-    this.nullChanger();
+    this.setState({piece: 1});
+    this.props.findLowest(this.state.placement);
+    // console.log('asd')
+
+    console.log("this is row", this.state.placement)
   }
 
-  nullChanger() {
-    if (this.props.isNull !== null) {
-      this.setState({piece: this.props.isNull})
-    }
-  }
   
 
   
@@ -32,5 +30,11 @@ class Square extends React.Component {
     )
   }
 }
+
+// const Square = function (props) {
+//   return (
+//     <td> {props.isNull} </td>
+//   )
+// }
 
 export default Square;

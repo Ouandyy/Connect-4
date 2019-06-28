@@ -8,111 +8,100 @@ class Board extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      column1: null,
-      column2: null,
-      column3: null,
-      column4: null,
-      column5: null,
-      column6: null,
+      row1: 1,
+      row2: 2,
+      row3: 3,
+      row4: 4,
+      row5: 5,
+      row6: 6
 
     }
-    this.columnToggler = this.columnToggler.bind(this);
-    this.clicker = this.clicker.bind(this)
+    // this.rowToggler = this.rowToggler.bind(this);
   }
 
-  clicker(e) {
-    this.props.turnCounter();
-    this.props.columnToggler();
-    this.nullChanger();
-  }
-
-  columnToggler () {
-    if (this.state.column6 === null) {
-      if (this.props.turn % 2 === 0) {
-        this.setState({column6: '*'})
-      }else {
-        this.setState({column6: 'x'})
-      };
-
-    }else if (this.state.column5 === null) {
-      if (this.props.turn % 2 === 0) {
-        this.setState({column5: '*'})
-      }else {
-        this.setState({column5: 'x'})
-      };
-      
-    }else if (this.state.column4 === null) {
-      if (this.props.turn % 2 === 0) {
-        this.setState({column4: '*'})
-      }else {
-        this.setState({column4: 'x'})
-      };
-      
-   }else if (this.state.column3 === null) {
-    if (this.props.turn % 2 === 0) {
-      this.setState({column3: '*'})
-    }else {
-      this.setState({column3: 'x'})
-    };
-      
-   }else if (this.state.column2 === null) {
-    if (this.props.turn % 2 === 0) {
-      this.setState({column2: '*'})
-    }else {
-      this.setState({column2: 'x'})
-    };
-      
-   }else if (this.state.column1 === null) {
-    if (this.props.turn % 2 === 0) {
-      this.setState({column1: '*'})
-    }else {
-      this.setState({column1: 'x'})
-    };
-      
-   }else {
-     alert('NO MORE FOR ROW')
-   }
 
 
-  }
+  // rowToggler() {
+  //   if (this.state.row6 === false) {
+  //       this.setState({ row6: true })
+      
+  //     ;
 
-  render () {
+  //   } else if (this.state.row5 === false) {
+  //       this.setState({ row5: true })
+      
+  //     ;
+
+  //   } else if (this.state.row4 === false) {
+  //       this.setState({ row4: true })
+      
+  //     ;
+
+  //   } else if (this.state.row3 === false) {
+  //       this.setState({ row3: true })
+      
+  //     ;
+
+  //   } else if (this.state.row2 === false) {
+  //       this.setState({ row2: true })
+      
+  //     ;
+
+  //   } else if (this.state.row1 === false) {
+  //       this.setState({ row1: true })
+      
+  //     ;
+
+  //   } else {
+  //     alert('NO MORE FOR COL')
+  //   }
+
+  // }
+
+
+  render() {
     return (
-    <table>
-        <Rows row = {1} turnCounter = {this.props.turnCounter} 
-              isNull = {this.state.column1} 
-              columnToggler = {this.columnToggler}
-              onClick = {this.clicker}/>
-        <Rows row = {2} turnCounter = {this.props.turnCounter} 
-              isNull = {this.state.column2} 
-              columnToggler = {this.columnToggler}
-              onClick = {this.clicker}/>
-        <Rows row = {3} turnCounter = {this.props.turnCounter} 
-              isNull = {this.state.column3} 
-              columnToggler = {this.columnToggler}
-              onClick = {this.clicker}/>
-        <Rows row = {4} turnCounter = {this.props.turnCounter} 
-              isNull = {this.state.column4} 
-              columnToggler = {this.columnToggler}
-              onClick = {this.clicker}/>
-        <Rows row = {5} turnCounter = {this.props.turnCounter} 
-              isNull = {this.state.column5} 
-              columnToggler = {this.columnToggler}
-              onClick = {this.clicker}/>
-        <Rows row = {6} turnCounter = {this.props.turnCounter} 
-              isNull = {this.state.column6} 
-              columnToggler = {this.columnToggler}
-              onClick = {this.clicker}/>
+      <table>
+        <Rows 
+          row={this.state.row1}
+          turnCounter={this.props.turnCounter}
+          rowToggler = {this.rowToggler}
+          findLowest = {this.props.findLowest} />
+        <Rows 
+          row={this.state.row2}
+          turnCounter={this.props.turnCounter} 
+          rowToggler = {this.rowToggler}
+          findLowest = {this.props.findLowest} />
+        <Rows 
+          row={this.state.row3}
+          turnCounter={this.props.turnCounter} 
+          rowToggler = {this.rowToggler}
+          findLowest = {this.props.findLowest} />
+        <Rows 
+          row={this.state.row4}
+          turnCounter={this.props.turnCounter} 
+          rowToggler = {this.rowToggler}
+          findLowest = {this.props.findLowest} />
+        <Rows 
+          row={this.state.row5}
+          turnCounter={this.props.turnCounter} 
+          rowToggler = {this.rowToggler}
+          findLowest = {this.props.findLowest} />
+        <Rows 
+          row={this.state.row6}
+          turnCounter={this.props.turnCounter} 
+          rowToggler = {this.rowToggler}
+          findLowest = {this.props.findLowest} />
       </table>
-      
-  )
+
+    )
   }
-  
+
 }
 
 
 
-  
+
 //   render () {
 //     return (
 //       <table>
